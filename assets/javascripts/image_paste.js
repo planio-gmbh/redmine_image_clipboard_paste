@@ -155,7 +155,7 @@ jQuery.event.props.push('dataTransfer');
 
         uploadImage: function(type, blob, editElement, filename) {
             var ext = (typeof filename === 'undefined') ? getExtension(type) : ('_' + filename);
-            var fileinput = $('.file_selector').get(0);
+            var fileinput = $('.file_selector').last();
             var timestamp = Math.round(+new Date()/1000);
             var name = 'screenshot_'+addFile.nextAttachmentId+'_'+timestamp+ext;
 
