@@ -147,24 +147,6 @@ jQuery.event.props.push('dataTransfer');
                     self.getDataItems(e.clipboardData, self.selection.editor, e)
                 }
             });
-
-            $('.wiki-edit').on('drop', function(e) {
-                self.saveCurrentSelection();
-                var files = e.dataTransfer.files;
-
-                for (var i = 0; i < files.length; i++) {
-                    var file = files[i];
-
-                    if (file.type.indexOf('image/') < 0) { continue }
-
-                    var blob = file.slice();
-                    self.uploadImage(file.type, blob, this, file.name.replace(/[ !"#%&\'()*:<=>?\[\\\]|]/g, '_'));
-
-                    e.preventDefault();
-                    e.stopPropagation();
-                    break;
-                }
-            });
         },
 
         // --------------------------------------------------------------------------
