@@ -7,4 +7,6 @@ Redmine::Plugin.register :redmine_image_clipboard_paste do
   description 'Allow pasting an image from the clipboard into the comment box on the form'
   version '3.3.0'
   requires_redmine :version_or_higher => '2.3.0'
+
+  hidden true if respond_to? :hidden
 end
